@@ -17,11 +17,11 @@ def add_custom_css():
         }
         /* Style for product cards */
         .card {
-            background-color: #ffe6e6; /* Light red color  background-color: #f9f9f9; */
+            background-color: #fff7f7; /* Light red color  background-color: #f9f9f9; */
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 5px rgba(255, 192, 203, 0.1); /* Faint pinkish-red shadow */
         }
         /* Align columns at the top */
         .stColumn > div {
