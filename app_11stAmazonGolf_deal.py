@@ -17,7 +17,7 @@ def add_custom_css():
         }
         /* Style for product cards */
         .card {
-            background-color: #f9f9f9;
+            background-color: #ffe6e6; /* Light red color */ background-color: #f9f9f9;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
