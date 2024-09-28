@@ -8,11 +8,14 @@ from datetime import datetime
 
 # %%
 url = "https://www.fmkorea.com/index.php?mid=other_sports&category=4657164507"
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
 
 # %%
 # Function to fetch data from a URL
 def fetch_bbs_data(url):
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response
     else:
