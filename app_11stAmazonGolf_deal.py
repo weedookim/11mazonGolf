@@ -165,7 +165,7 @@ def extract_products_from_json(json_data):
                             }
                             
                             # Check if 'Promotion Texts' contains "아마존핫딜"
-                            if "아마존핫딜" in product_info.get('Promotion Texts', ''):
+                            if "아마존핫딜" or "아마존 추천상품" in product_info.get('Promotion Texts', ''):
                                 products.append(product_info)
 
     return products
@@ -185,7 +185,7 @@ def find_next_data_url(json_data):
                 if block['type'] == 'Function_Paging':
                     for item in block.get('list', []): 
                         find_URL = item.get('nextDataUrl', None)
-
+    
     return find_URL
 
                     
@@ -215,7 +215,7 @@ def load_latest_product_data():
         #current_url = json_data['data'][0].get('nextDataUrl', None)
         # Loop through all blocks in 'blockList'
         current_url = find_next_data_url(json_data)
-        #print(current_url)  
+        print(current_url)  
     
     return all_products
 
@@ -258,6 +258,8 @@ st.sidebar.header('Filter Products')
 # Search bar for product name with like search
 st.sidebar.markdown("<div class='search-label'>🔍 Search by name (like search)</div>", unsafe_allow_html=True)
 search_term = st.sidebar.text_input('Search', '', label_visibility="collapsed").lower()
+
+
 
 # Filter products based on the search term first
 filtered_products_name = [
