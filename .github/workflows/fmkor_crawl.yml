@@ -13,10 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7'  # 필요한 Python 버전으로 설정하세요
+        python-version: 3.8  # 필요한 Python 버전으로 설정하세요
 
     - name: Install dependencies
       run: |
