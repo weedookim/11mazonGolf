@@ -15,7 +15,13 @@ headers = {
 # %%
 # Function to fetch data from a URL
 def fetch_bbs_data(url):
-    response = requests.get(url, headers=headers)
+
+    session = requests.Session()
+    session.headers.update({
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
+    })
+    #response = requests.get(url, headers=headers)
+    response = session.get(session)
     if response.status_code == 200:
         return response
     else:
@@ -83,7 +89,7 @@ if response != None:
     slack_webhook_url = os.getenv('SLACK_WEBHOOK_URL')
 
 
-
+    print(slack_webhook_url)
     # results 리스트의 각 항목을 슬랙에 전송
     for result in results:
         # 메시지를 전송할 데이터 구성
